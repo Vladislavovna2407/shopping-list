@@ -18,21 +18,14 @@ input.addEventListener('keydown', function(event) {
 
         const newProduct = document.createElement('p');
         newProduct.textContent = product;
+        newProduct.addEventListener('click', function() {
+            newProduct.classList.toggle('done');
+        });
 
         if (product != '') {
             container.prepend(newProduct);
         }
 
         input.value = '';
-
-
     }
-    const elements = document.querySelectorAll('p')
-    console.log(elements)
-    for (let item of elements) {
-        item.addEventListener('click', function() {
-            item.classList.toggle('done');
-        });
-    }
-
 });
